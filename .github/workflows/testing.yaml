@@ -27,9 +27,10 @@ jobs:
   next-build:
     needs: build
     runs-on: ubuntu-latest
+    environment: actions
     steps:
       - name: Use output from build job
         run: echo "The build job said'${{ needs.build.outputs.message }}'"
 
       - name: calling ENV
-        run: echo "Hi my Name is ${{env.NAME}}"
+        run: echo "Hi my Name is $NAME"
