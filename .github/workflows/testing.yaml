@@ -29,3 +29,6 @@ jobs:
     steps:
       - name: Use output from build job
         run: echo "The build job said'${{ needs.build.outputs.message }}'"
+
+      - name: calling ENV
+        run: echo "Hi my Name is ${{env.NAME}}"
