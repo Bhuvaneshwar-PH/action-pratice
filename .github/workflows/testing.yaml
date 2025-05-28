@@ -34,3 +34,6 @@ jobs:
 
       - name: calling ENV
         run: echo "Hi my Name is $NAME"
+      - name: Print env vars
+        run: env
+
