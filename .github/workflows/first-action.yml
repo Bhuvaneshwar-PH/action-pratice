@@ -1,0 +1,15 @@
+name: action-worlfow
+
+on: 
+    push:
+        branches: main
+
+jobs:
+    first:
+        runs-on: ubuntu-latest
+        steps:
+            - name: node-version
+              run: node --version
+            - name: dotnet-version
+              run: dotnet --version
+              
