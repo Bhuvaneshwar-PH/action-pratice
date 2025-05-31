@@ -8,6 +8,8 @@ jobs:
     shell-execute:
         runs-on: ubuntu-latest
         steps:
+            - name: checout repo
+              uses: actions/checkout@v4
             - name: execute shell
               run: |
                 chmod +x test.sh
