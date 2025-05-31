@@ -8,8 +8,12 @@ jobs:
     first:
         runs-on: ubuntu-latest
         steps:
-            - name: node-version
-              run: node --version
-            - name: dotnet-version
-              run: dotnet --version
+            - name: checkout repo
+              uses: action/checkout@4  
+
+            - name: list files
+              run: |
+                ls -ltra
+                echo "This is executing"
+                cat /.github/workflows/first-action.yml
               
