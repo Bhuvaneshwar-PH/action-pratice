@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout repo
-              uses: action/checkout@4  
+              uses: actionsu/checkout@4  
 
             - name: list files
               run: |
