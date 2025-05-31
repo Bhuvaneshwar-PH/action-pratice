@@ -1,0 +1,27 @@
+name: ascii generation using cowsay
+on: 
+    push: 
+        branches: ['main']
+
+jobs:
+    cowsay-install-run: 
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4
+
+            - name: installation
+              run: sudo apt-get install -y cowsay
+            
+            - name: run-cowsay command
+              run: cowsay -f dragon "Dradracarys" >> dragon.txt
+              
+            - name : list and view file
+              run: |
+               ls -ltra
+               cat dragon.txt   
+
+
+
+            
