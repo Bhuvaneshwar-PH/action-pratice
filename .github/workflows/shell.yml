@@ -1,0 +1,14 @@
+name: Executing Shell script
+
+on: 
+    push: 
+        branches: ['main']
+
+jobs:
+    shell-execute:
+        runs-on: ubuntu-latest
+        steps:
+            - name: execute shell
+              run: |
+                chmod +x test.sh
+                ./test.sh
