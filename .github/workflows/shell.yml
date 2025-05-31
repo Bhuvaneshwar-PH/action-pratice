@@ -10,7 +10,9 @@ jobs:
         steps:
             - name: checout repo
               uses: actions/checkout@v4
+              
             - name: execute shell
               run: |
+                ls -ltra
                 chmod +x test.sh
                 ./test.sh
