@@ -1,0 +1,10 @@
+name: self
+on:
+    workflow_dispatch: {}
+
+jobs:
+    self-host:
+        runs-on: BHUVAN
+        steps:
+            - name: checkout
+              run: actions/checkout@v4
