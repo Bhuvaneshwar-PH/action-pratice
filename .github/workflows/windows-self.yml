@@ -4,7 +4,7 @@ on:
 
 jobs:
     self-host:
-        runs-on: BHUVAN
+        runs-on: self-hosted
         steps:
             - name: checkout
               run: actions/checkout@v4
