@@ -15,5 +15,5 @@ jobs:
               run: |
                 ls -ltra
                 echo "This is executing"
-                cat /.github/workflows/first-action.yml
+                cat .github/workflows/first-action.yml
               
