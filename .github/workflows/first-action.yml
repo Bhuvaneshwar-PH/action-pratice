@@ -3,6 +3,8 @@ name: action-worlfow
 on: 
     push:
         branches: main
+env:
+  TEST_NAME: ${{ vars.TEST_NAME }}
 
 jobs:
     first:
@@ -16,4 +18,5 @@ jobs:
                 ls -ltra
                 echo "This is executing"
                 cat .github/workflows/first-action.yml
+                echo " My name is $TEST_NAME"
               
