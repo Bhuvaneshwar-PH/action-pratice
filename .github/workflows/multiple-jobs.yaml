@@ -31,7 +31,9 @@ jobs:
             with:
                 name: build-file
           - name: grep
-            run: grep -i "dragon" dragon.txt
+            run: |
+                ls -ltra
+                 grep -i "dragon" dragon.txt
     
     job3:
         runs-on: ubuntu-latest
