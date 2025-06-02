@@ -33,7 +33,7 @@ jobs:
           - name: grep
             run: |
                 ls -ltra
-                 grep -i "dragon" dragon.txt
+                
     
     job3:
         runs-on: ubuntu-latest
