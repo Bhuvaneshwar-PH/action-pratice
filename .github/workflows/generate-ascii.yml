@@ -1,7 +1,6 @@
 name: ascii generation using cowsay
 on: 
-    push: 
-        branches: ['main']
+    workflow_dispatch: 
 
 jobs:
     cowsay-install-run: 

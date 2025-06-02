@@ -1,8 +1,7 @@
 name: action-worlfow
 
 on: 
-    push:
-        branches: main
+    workflow_dispatch: 
 env:
   TEST_NAME: ${{ vars.TEST_NAME }}
 

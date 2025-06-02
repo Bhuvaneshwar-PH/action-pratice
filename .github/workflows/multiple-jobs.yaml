@@ -1,0 +1,45 @@
+name: multi-job
+
+on: 
+    workflow_dispatch: 
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checout repo
+              uses: actions/checkout@v4
+
+            - name: execute shell
+              run: |
+                ls -ltra
+                chmod +x .github/workflows/test.sh
+                .github/workflows/test.sh
+
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                name: build-file
+                path: dragon.txt
+    
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+          - name: Download artifacts
+            uses: actions/download-artifact@v4
+            with:
+                name: build-file
+          - name: grep
+            run: grep -i "dragon" dragon.txt
+    
+    job3:
+        runs-on: ubuntu-latest
+        needs: job2
+        steps:
+           - name: Download artifacts
+             uses: actions/download-artifact@v4
+             with:
+                name: build-file
+           - name: Reading file
+             run: cat dragon.txt
