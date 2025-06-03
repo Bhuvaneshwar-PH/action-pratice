@@ -19,5 +19,5 @@ jobs:
         steps:
             - name: execute env
               run: |
-                My name is ${{vars.TEST_NAME}}
-                This is coming from workflow dispatch - ${{inputs.test}}
+                echo 'My name is ${{vars.TEST_NAME}}'
+                echo 'This is coming from workflow dispatch - ${{inputs.test}}'
