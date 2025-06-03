@@ -2,6 +2,11 @@ name: Matrix Configuration
 
 on: 
     workflow_dispatch: 
+        inputs:
+            test:  
+                description: 'testing'
+                required: false
+                default: 'Type something here'
 
 jobs:
     matrix-conf:
@@ -13,4 +18,6 @@ jobs:
         runs-on: ${{matrix.os}}-${{matrix.version}}
         steps:
             - name: execute env
-              run: My name is ${{vars.TEST_NAME}}
+              run: |
+                My name is ${{vars.TEST_NAME}}
+                This is coming from workflow dispatch - ${{inputs.test}}
