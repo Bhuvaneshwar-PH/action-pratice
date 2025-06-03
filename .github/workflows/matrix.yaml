@@ -1,0 +1,16 @@
+name: Matrix Configuration
+
+on: 
+    workflow_dispatch: 
+
+jobs:
+    matrix-conf:
+        strategy:
+            matrix:
+                os: ['windows', 'ubuntu']
+                version: ['latest']
+                
+        runs-on: ${{matrix.os}}-${{matrix.version}}
+        steps:
+            - name: execute env
+              run: My name is ${{vars.TEST_NAME}}
